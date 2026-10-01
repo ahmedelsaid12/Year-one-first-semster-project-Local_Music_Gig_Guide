@@ -1,0 +1,32 @@
+/* SoundWave City - Milestone 1 (mobile-first base styles) */
+:root {
+  --brand-purple: #9b5cff;
+  --brand-pink: #ff4d8d;
+  --border-dark: #2f2f3a;
+}
+body { font-family: system-ui, -apple-system, sans-serif; }
+.brand { color: var(--brand-pink) !important; font-weight: 700; letter-spacing: .5px; }
+.section-title { border-bottom: 2px solid var(--brand-purple); padding-bottom: .25rem; margin-bottom: 1.5rem; }
+.hero-banner {
+  background: linear-gradient(135deg, #2b1055, #7597de20), #14141c;
+  padding: 4rem 1rem;
+}
+.gig-card, .card {
+  border: 2px solid var(--border-dark);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
+}
+.venue-link { color: var(--brand-pink); }
+.card:focus-visible, .btn:focus-visible, .nav-link:focus-visible, a:focus-visible {
+  outline: 3px solid var(--brand-pink);
+  outline-offset: 4px;
+}
+.skip-link { position: absolute; z-index: 10; padding: .5rem 1rem; background: #fff; color: #000; }
+.btn { min-height: 44px; display: inline-flex; align-items: center; }
+
+/* Custom media query: hide decorative hero banner on mobile (<768px) */
+@media (max-width: 767.98px) {
+  .hero-banner { background: none; padding: 1.5rem 1rem; }
+  .hero-banner .lead { display: none; } /* hide non-essential text on small screens */
+  .card-title { font-size: 1.25rem; }
+}
