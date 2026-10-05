@@ -1,0 +1,103 @@
+/* ==========================================================
+   SoundWave City - Milestone 1 stylesheet
+   Base styles first, then one media query at the bottom.
+   ========================================================== */
+
+/* brand colours live here so I only change them in one place */
+:root {
+  --brand-primary: #ff7aa8;   /* pink, used for buttons + links */
+  --brand-secondary: #9b5cff; /* purple, used for borders + badges */
+  --brand-dark: #14141c;      /* near black, text on pink buttons */
+  --border-dark: #2f2f3a;
+  --hero-start: #2b1055;
+  --hero-end: #14141c;
+  --hero-overlay: rgba(20, 20, 28, 0.7); /* dark layer so the text stays readable on the photo */
+  --skip-bg: #ffffff;
+  --skip-text: #000000;
+}
+
+body { font-family: system-ui, -apple-system, sans-serif; }
+
+/* logo + name in the header */
+.brand-name { font-weight: 700; color: var(--brand-primary); }
+
+/* links in brand colour (bootstrap link colour was too dark on this bg) */
+a { color: var(--brand-primary); }
+
+/* "you are here" in the nav: bold + underline, not just colour */
+.nav-link.active,
+.breadcrumb-item.active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* skip link only shows when you tab to it */
+.skip-link {
+  position: absolute;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  background: var(--skip-bg);
+  color: var(--skip-text);
+}
+
+.section-title {
+  border-bottom: 2px solid var(--brand-secondary);
+  padding-bottom: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* hero on the home page */
+.hero-banner {
+  /* photo behind a dark overlay, gradient is the fallback if the image is missing */
+  background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url("images/pexels-sebastian-ervi-866902-1763067.jpg") center / cover, linear-gradient(135deg, var(--hero-start), var(--hero-end));
+  padding: 4rem 1rem;
+}
+.hero-wave { display: block; width: 200px; max-width: 100%; margin: 1rem auto; }
+
+/* gig photos: same height, cropped with object-fit like the market-cover in the lab */
+.gig-photo { height: 180px; width: 100%; object-fit: cover; border-radius: 10px 10px 0 0; }
+
+/* cards: padding is on the card-body in the html, border + radius + shadow here */
+.card {
+  border: 2px solid var(--border-dark);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+/* scroll-to venue from a gig card: highlight the one you landed on */
+.venue-card:target,
+article:target .venue-card { border-color: var(--brand-primary); }
+
+.genre-badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background: var(--brand-secondary);
+  color: var(--brand-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* buttons (44px tall so they are easy to tap) */
+.btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.btn-brand { background: var(--brand-primary); color: var(--brand-dark); border: 2px solid var(--brand-primary); font-weight: 600; }
+.btn-brand:hover { background: transparent; color: var(--brand-primary); }
+.btn-brand-outline { background: transparent; color: var(--brand-primary); border: 2px solid var(--brand-primary); }
+.btn-brand-outline:hover { background: var(--brand-primary); color: var(--brand-dark); }
+
+/* visible focus ring for keyboard users */
+a:focus-visible,
+.btn:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--brand-primary);
+  outline-offset: 3px;
+}
+
+/* small screens (under 768px): hide the decoration + the long hero text.
+   used max-width like the AGRI-104 lab */
+@media (max-width: 767.98px) {
+  .hero-banner { padding: 1.5rem 1rem; }
+  .hero-banner .lead,
+  .hero-wave { display: none; }
+}

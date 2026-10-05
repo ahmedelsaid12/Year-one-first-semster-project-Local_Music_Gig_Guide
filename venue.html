@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venues | SoundWave City</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- site header: logo, name, nav and search are the same on every page -->
+<header>
+<a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main navigation">
+ <div class="container">
+  <div class="d-flex align-items-center gap-2">
+   <a class="navbar-brand m-0" href="index.html"><img src="images/logo.svg" alt="SoundWave City - go to homepage" width="40" height="40"></a>
+   <span class="brand-name">SoundWave City</span>
+  </div>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <!-- collapses into the burger menu under 992px -->
+  <div class="collapse navbar-collapse" id="mainNav">
+   <ul class="navbar-nav ms-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="gigs.html">Gig Feed</a></li><li class="nav-item"><a class="nav-link active" href="venue.html" aria-current="page">Venues</a></li><li class="nav-item"><a class="nav-link" href="booking.html">Book a Gig</a></li></ul>
+   <form class="d-flex ms-lg-3" role="search" action="gigs.html" method="get">
+    <label for="site-search" class="visually-hidden">Search bands, venues or genres</label>
+    <input class="form-control me-2" id="site-search" type="search" name="q" placeholder="Search gigs">
+    <button class="btn btn-brand" type="submit">Search</button>
+   </form>
+  </div>
+ </div>
+</nav>
+</header>
+<main id="main">
+<nav aria-label="Breadcrumb" class="container mt-3">
+ <ol class="breadcrumb mb-0"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item"><a href="gigs.html">Gig Feed</a></li><li class="breadcrumb-item active" aria-current="page">Venues</li></ol>
+</nav>
+<section class="container my-4" aria-labelledby="vh">
+ <h1 id="vh" class="section-title">Venues &amp; Bands</h1>
+ <div class="row g-4">
+  <article class="col-12 col-lg-6" id="the-blue-note">
+   <div class="card venue-card h-100"><div class="card-body p-4">
+    <img class="img-fluid rounded mb-3" src="images/pexels-cottonbro-9419405.jpg" alt="Jazz band playing in the intimate club at The Blue Note" loading="lazy">
+    <h2 class="h4">The Blue Note</h2>
+    <dl class="mb-3"><dt>Address</dt><dd>101 High St.</dd><dt>Capacity</dt><dd>250</dd><dt>Promoter contact</dt><dd>Sarah Jenkins</dd></dl>
+    <h3 class="h6">Bands playing here</h3>
+    <ul class="list-group list-group-flush mb-3"><li class="list-group-item d-flex justify-content-between flex-wrap"><span>The Neon Lights (Synthpop)</span><time datetime="2026-10-15">Thu 15 Oct</time></li><li class="list-group-item d-flex justify-content-between flex-wrap"><span>Jazz Collective (Jazz)</span><time datetime="2026-10-22">Thu 22 Oct</time></li></ul>
+    <a class="btn btn-brand" href="booking.html">Request to play here</a>
+   </div></div>
+  </article>
+  <article class="col-12 col-lg-6" id="the-foundry">
+   <div class="card venue-card h-100"><div class="card-body p-4">
+    <img class="img-fluid rounded mb-3" src="images/pexels-lizolda99-9938788.jpg" alt="Band playing in the industrial space at The Foundry" loading="lazy">
+    <h2 class="h4">The Foundry</h2>
+    <dl class="mb-3"><dt>Address</dt><dd>45 Industrial Way</dd><dt>Capacity</dt><dd>500</dd><dt>Promoter contact</dt><dd>Mike Ross</dd></dl>
+    <h3 class="h6">Bands playing here</h3>
+    <ul class="list-group list-group-flush mb-3"><li class="list-group-item d-flex justify-content-between flex-wrap"><span>Iron Clad (Heavy Metal)</span><time datetime="2026-10-18">Sun 18 Oct</time></li><li class="list-group-item d-flex justify-content-between flex-wrap"><span>The Neon Lights (Synthpop)</span><time datetime="2026-11-02">Mon 2 Nov</time></li></ul>
+    <a class="btn btn-brand" href="booking.html">Request to play here</a>
+   </div></div>
+  </article>
+  <article class="col-12 col-lg-6" id="acoustic-lounge">
+   <div class="card venue-card h-100"><div class="card-body p-4">
+    <img class="img-fluid rounded mb-3" src="images/pexels-eenesfaruk-11549331.jpg" alt="Warm live-music stage at the Acoustic Lounge" loading="lazy">
+    <h2 class="h4">Acoustic Lounge</h2>
+    <dl class="mb-3"><dt>Address</dt><dd>88 River Road</dd><dt>Capacity</dt><dd>100</dd><dt>Promoter contact</dt><dd>Emma Cole</dd></dl>
+    <h3 class="h6">Bands playing here</h3>
+    <ul class="list-group list-group-flush mb-3"><li class="list-group-item d-flex justify-content-between flex-wrap"><span>River Boys (Indie Rock)</span><time datetime="2026-10-25">Sun 25 Oct</time></li></ul>
+    <a class="btn btn-brand" href="booking.html">Request to play here</a>
+   </div></div>
+  </article>
+ </div>
+</section>
+</main>
+<!-- footer: copyright and a help link -->
+<footer class="py-4 mt-5 border-top">
+ <div class="container text-center small">
+  <p class="mb-1">&copy; 2026 SoundWave City &middot; City Live Music Association</p>
+  <p class="mb-0"><a href="booking.html#help">Help &amp; FAQ</a></p>
+ </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
